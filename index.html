@@ -1,0 +1,166 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <h3 class="display-4 text-center">Quản Lý Học Viện </h3>
+                <form id="formQLSV">
+                    <div class="row">
+                        <div class="col-6 form-group">
+                            <label for="">Chức Vụ: </label>
+                            <select name="" id="khSV" class="form-control">
+                                <option value="All">Chọn chức vụ</option>
+                                <option value="Sinh Viên">Sinh viên</option>
+                                <option value="Khách Hàng">Khách Hàng</option>
+                                <option value="Nhân Viên">Nhân Viên</option>
+                            </select>
+                            <span id="spanKhoaHoc" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-6 form-group">
+                            <label for="">Họ Và Tên : </label>
+                            <input type="text" class="form-control" id="txtTenSV" />
+                            <span id="spanTenSV" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 form-group">
+                            <label for="">Mã Số : </label>
+                            <input type="text" class="form-control" id="txtMaSV" />
+                            <span id="spanMaSV" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-6 form-group">
+                            <label for="">Địa Chỉ: </label>
+                            <input type="text" class="form-control" id="txtPass" />
+                            <span id="spanMatKhau" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 form-group " id="SNLV">
+                            <label for="">Số Ngày Làm Việc : </label>
+                            <input type="number" class="form-control" id="txtNgaySinh" />
+                            <span id="spanNgaySinh" class="text-danger"></span>
+                        </div>
+                        <div class="col-6 form-group" id="TLN">
+                            <label for="">Tiền Lương /Ngày : </label>
+                            <input type="number" class="form-control" id="txtLuong" />
+                            <span id="spanLuong" class="text-danger"></span>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="">Email : </label>
+                            <input type="text" class="form-control" id="txtEmail" />
+                            <span id="spanEmailSV" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-6 form-group" id="TCT">
+                            <label for="">Tên Công Ty : </label>
+                            <input type="text" class="form-control" id="txtCongTy" />
+                            <span id="spanCongTy" class="text-danger"></span>
+                        </div>
+                        <div class="col-6 form-group" id="TGHD">
+                            <label for="">Trị Giá Hoá Đơn : </label>
+                            <input type="number" class="form-control" id="txtTien" />
+                            <span id="spanTien" class="text-danger"></span>
+                        </div>
+                        <div class="col-6 form-group " id="DG">
+                            <label for="">Đánh Giá : </label>
+                            <input type="text" class="form-control" id="txtDanhGia" />
+                            <span id="spanDanhGia" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row d-flex">
+                        <div class="col-4 form-group" id="DIEMT">
+                            <label for="">Điểm toán : </label>
+                            <input type="text" class="form-control" id="txtDiemToan" />
+                            <span id="spanToan" class="text-danger"></span>
+                        </div>
+                        <div class="col-4 form-group" id="DIEML">
+                            <label for="">Điểm lý : </label>
+                            <input type="text" class="form-control" id="txtDiemLy" />
+                            <span id="spanLy" class="text-danger"></span>
+                        </div>
+                        <div class="col-4 form-group" id="DIEMH">
+                            <label for="">Điểm hóa : </label>
+                            <input type="text" class="form-control" id="txtDiemHoa" />
+                            <span id="spanHoa" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <button id="btnThem" type="button" class="btn btn-success">
+                            ADD+
+                        </button>
+
+                        <button id="btnUpdate" style="display: none" type="button" class="btn btn-info">
+                            Cập Nhật
+                        </button>
+                        <button id="btnCapNhat" style="display: none" type="button" class="btn btn-info">
+                            Cập Nhật
+                        </button>
+
+                        <button id="btnReset" type="button" class="btn btn-dark">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+
+                
+
+            </div>
+            <div class="col-8 mx-auto">
+                <table class="table">
+                    <thead>
+                        <tr id="thead">
+                            <th>Mã Số</th>
+                            <th>Họ Tên</th>
+                            <th>Địa chỉ</th>
+                            <th>Email</th>
+                            <th class="col-2 form-group "> 
+                                <select name="" id="locDS" class=" btn btn-link">
+                                    <option value="All">Phân loại: Tất cả</option>
+                                    <option value="Sinh Viên">Sinh viên</option>
+                                    <option value="Khách Hàng">Khách Hàng</option>
+                                    <option value="Nhân Viên">Nhân Viên</option>
+                                </select>
+                            </th>
+                            <th id="rTienLuong">Tiền Lương</th>
+                            <th id="rDiemTrungBinh">Điểm TB</th>
+                            <th id="rCongTy">Công Ty</th>
+                            <th id="rHoaDon">Hoá Đơn</th>
+                            <th id="rDanhGia">Đánh Giá</th>
+
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodySinhVien"></tbody>
+                </table>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+    
+</body>
+
+</html>
